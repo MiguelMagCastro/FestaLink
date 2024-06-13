@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Salões</title>
+    <link rel="stylesheet" href="CSS/styles-busca-saloes.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
+</head>
+<body>
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="busca-saloes.html">Buscar Salões</a></li>
+            </ul>
+            <div class="profile-pic">
+                <button class="profile-btn" onclick="toggleDropdown()">
+                    <img src="img/user-profile.jpg" alt="Perfil">
+                </button>
+                <div id="profile-dropdown" class="dropdown-content">
+                    <a href="usuario.html">Ver Perfil</a>
+                    <a href="javascript:logout()">LogOut</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Buscar Salões de Festas</h1>
+        <section class="filters-and-header">
+        <section class="search-filters">
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="nomeSalao"><b>Nome do Salão</b></label>
+                    <input type="text" id="nomeSalao" name="nomeSalao" placeholder="Nome do Salão">
+                </div>
+                <div class="form-group">
+                    <label for="localizacaoSalao"><b>Localização</b></label>
+                    <input type="text" id="localizacaoSalao" name="localizacaoSalao" placeholder="Localização">
+                </div>
+                <div class="form-group">
+                    <label for="capacidadeIntervalo"><b>Capacidade Salão:</b></label>
+                    <div id="slider-capacidade"></div>
+                    <output id="capacidadeValor">20 - 500</output>
+                </div>
+                <div class="form-group" >
+                    <label for="precoIntervalo"><b>Preço Salão:</b></label>
+                    <div id="slider-preco"></div>
+                    <output id="precoValor">R$ 50,00 - R$ 300,00</output>
+                </div> 
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+        <section class="saloes-list">
+            <div class="saloes-header" >
+                <div ><p>Nome</p></div>
+                <div><p>Endereço</p></div>
+                <div><p>Capacidade</p></div>
+                <div><p>Preço p/h</p></div>
+                <div></div>
+            </div>
+            <div id="saloesResults" class="saloes-container">
+                <!-- Dados populados dinamicamente -->
+            </div>
+            <div class="avisoTotalSaloes">
+                <span id="totalSaloes">Total de Salões: 0</span>
+            </div>
+            <div class="pagination">
+                <button onclick="mudarPagina(-1)">Anterior</button>
+                <span id="paginaAtual">1</span>
+                <button onclick="mudarPagina(1)">Próximo</button>
+            </div>             
+        </section>
+    </section>
+        
+    </main>
+
+    <script src="JS/ScriptBuscaSaloes.js"></script>
+</body>
+</html>

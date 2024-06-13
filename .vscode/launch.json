@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FestalinkApplication<festalink>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.festalink.demo.FestalinkApplication",
+            "projectName": "festalink",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

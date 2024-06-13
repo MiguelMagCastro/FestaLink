@@ -1,0 +1,33 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: 
+authors:
+  - family-names: Ceolin
+    given-names: Gustavo
+  - family-names: Castro
+    given-names: Miguel
+  - family-names: Castro
+    given-names: Mateus  
+  - family-names: Arturo
+    given-names: Petrius
+  - family-names: Viana
+    given-names: Hugo
+
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alonso Veloso
+    given-names: Eveline 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Baroni De Carvalho
+    given-names: Juliana Amaral 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: De Brito
+    given-names: Aline Norberta
+    keywords:
+    - 
+repository-code: 
+license: CC-BY-4.0
+version: 1.0.0
+date-released:

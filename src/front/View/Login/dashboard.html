@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Salões em Destaque</title>
+    <link rel="stylesheet" href="CSS/styles-dashboard.css" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Adicionando a biblioteca de gráficos Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div
+      id="notification-container"
+      style="position: fixed; top: 20px; right: 20px; z-index: 1000"
+    ></div>
+    <header>
+      <div class="logo-container">
+        <img src="img/logo.png" alt="Logo" class="logo" />
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="busca-saloes.html">Buscar Salões</a></li>
+        </ul>
+        <div class="profile-pic">
+          <button class="profile-btn" onclick="toggleDropdown()">
+            <img src="img/user-profile.jpg" alt="Perfil" />
+          </button>
+          <div id="profile-dropdown" class="dropdown-content">
+            <a href="usuario.html">Ver Perfil</a>
+            <a href="javascript:logout()">LogOut</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>DashBoard</h1>
+      <div id="Dashboard">
+        <div id="linha1">
+          <div class="grafico" id="linha1-grafico1">
+            <h2>Valor Arrecadado</h2>
+            <h3 id="valorArrecadado"><b>R$ 0,00</b></h3>
+          </div>
+          <div class="grafico" id="linha1-grafico2">
+            <h2>Avaliações</h2>
+            <h3 id="numeroAvl">Número de Avaliações: </h3>
+            <h3 id="mediaAvl">Média das Avaliações: </h3>
+          </div>
+        </div>
+        <div id="linha2">
+          <div class="grafico" id="linha2-grafico1">
+            <h2>Valores A Receber</h2>
+            <h3 id="valorAReceber"><b>R$ 0,00</b></h3>
+          </div>
+          <div class="grafico" id="linha2-grafico2">
+            <h2>Taxa cancelamento</h2>
+            <canvas id="grafico-taxaCancelamento" class="grafico"></canvas>
+          </div>
+        </div>        
+
+        <div id="melhorSalao">
+          <h2>Salão de Festa mais Alugado</h2>
+          <p id="salaoNome"></p>
+          <p id="salaoLocalizacao"></p>
+          <p id="salaoCapacidade"></p>
+          <p id="salaoDescricao"></p>
+          <p id="numeroReservas"></p>
+          <button id="abrirSalao"> detalhes</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="JS/ScriptDashboard.js"></script>
+    <script>
+      window.onclick = function (event) {
+        if (
+          !event.target.matches(".profile-btn") &&
+          !event.target.matches(".profile-btn img")
+        ) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

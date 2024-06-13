@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Salões em Destaque</title>
+    <link rel="stylesheet" href="CSS/stylesHOME.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="busca-saloes.html">Buscar Salões</a></li>
+
+            </ul>
+            <div class="profile-pic">
+                <button class="profile-btn" onclick="toggleDropdown()">
+                    <img src="img/user-profile.jpg" alt="Perfil">
+                </button>
+                <div id="profile-dropdown" class="dropdown-content">
+                    <a href="usuario.html">Ver Perfil</a>
+                    <a href="javascript:logout()">LogOut</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Salões em destaque</h1>
+        <div id="saloes-container"></div>
+    </main>
+
+    <script src="JS/ScriptHome.js"></script>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("profile-dropdown");
+            dropdown.classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-btn') && !event.target.matches('.profile-btn img')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        function logout() {
+        
+        localStorage.clear();
+
+    
+        window.location.href = 'index.html';
+
+        window.history.pushState(null, "", window.location.href);
+        window.onpopstate = function () {
+            window.history.pushState(null, "", window.location.href);
+        };  
+    }
+    </script>
+</body>
+</html>

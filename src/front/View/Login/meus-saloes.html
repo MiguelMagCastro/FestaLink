@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Salões em Destaque</title>
+    <link rel="stylesheet" href="CSS/styles-meus-saloes.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="busca-saloes.html">Buscar Salões</a></li>
+            </ul>
+            <div class="profile-pic">
+                <button class="profile-btn" onclick="toggleDropdown()">
+                    <img src="img/user-profile.jpg" alt="Perfil">
+                </button>
+                <div id="profile-dropdown" class="dropdown-content">
+                    <a href="usuario.html">Ver Perfil</a>
+                    <a href="javascript:logout()">LogOut</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="header-content">
+        <div class="title-container">
+            <h1>Meus Salões</h1>
+        </div>
+        <div class="button-container">
+            <button class="add-salao-btn" onclick="openModal()">+ Adicionar novo Salão</button>
+        </div>
+    </div>
+    
+    <div id="salaoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Cadastrar Salão de Festa</h2>
+            <form id="salaoForm">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="localizacao">Localização:</label>
+                <input type="text" id="localizacao" name="localizacao" required>
+                
+                <label for="capacidade">Capacidade:</label>
+                <input type="number" id="capacidade" name="capacidade" required>
+                
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+                
+                <label for="precoBase">Preço Base:</label>
+                <input type="number" step="0.01" id="precoBase" name="precoBase" required>
+                
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    
+    <main>
+        <div id="saloes-container"></div>
+    </main>
+
+    <script src="Js/ScriptMeusSaloes.js"></script>
+</body>
+</html>

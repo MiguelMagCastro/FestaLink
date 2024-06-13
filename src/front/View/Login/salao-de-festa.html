@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalhes do Salão de Festas</title>
+    <link rel="stylesheet" href="CSS/styles-salao-de-festa.css" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Adicione isso no <head> do seu HTML -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"></div>
+    <header>
+      <div class="logo-container">
+        <img src="img/logo.png" alt="Logo" class="logo" />
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="busca-saloes.html">Buscar Salões</a></li>
+        </ul>
+        <div class="profile-pic">
+          <button class="profile-btn" onclick="toggleDropdown()">
+            <img src="img/user-profile.jpg" alt="Perfil" />
+          </button>
+          <div id="profile-dropdown" class="dropdown-content">
+            <a href="usuario.html">Ver Perfil</a>
+            <a href="javascript:logout()">LogOut</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="carousel-container">
+        <!-- Carrossel de imagens aqui -->
+        <button id="carrosselBtn" class="prev">◀</button>
+        <div class="carousel">
+          <img src="img/testeSalao1.jpg" alt="Imagem do Salão 1" />
+          <img src="img/testeSalao2.jpg" alt="Imagem do Salão 2" />
+        </div>
+        <button id="carrosselBtn" class="next">▶</button>
+      </div>
+      <div class="details-container">
+        <div class="left-details">
+          <h1 id="salao-name">Nome do Salão</h1>
+          <p id="salao-endereco">Endereco do Salão</p>
+          <h2>Capacidade:</h2>
+          <div class="capacity">
+            <span id="salao-capacity">100 pessoas</span>
+          </div>
+          <h2>Descrição:</h2>
+          <p id="salao-description">
+            Descrição detalhada do salão de festas...
+          </p>
+          <div id="feedback-area" style="display: none"></div>
+          <div id="feedback-feitos"></div>
+        </div>
+        <div class="right-details">
+          <h2>Aluguel</h2>
+          <div class="price-info">
+            <img
+              src="img/hand-holding-dollar-solid.svg"
+              alt="money"
+              style="width: 25px; height: 25px"
+            />
+            <p id="price-per-hour"></p>
+          </div>
+          <h2>Anunciante</h2>
+          <div class="proprietario-info">
+            <img
+              src="img/circle-user-solid.svg"
+              alt="user"
+              style="width: 25px; height: 25px"
+            />
+            <p id="proprietario-nome"></p>
+          </div>
+          <h2>Telefone</h2>
+          <div class="proprietario-contact">
+            <img
+              src="img/whatsapp.svg"
+              alt="wpp"
+              style="width: 25px; height: 25px"
+            />
+            <p id="proprietario-telefone"></p>
+          </div>
+          <div class="btnVisualizarReservas" id="btnMutavel" style="display: none">
+            <button onclick="openModalReserva()">Reservar</button>
+          </div>
+          <div class="btnAdicionarBloqueio" id="btnMutavel" style="display: none">
+            <button onclick="openModalDatasBloqueio()">Restringir Data</button>
+            <p></p>
+            <button onclick="openModalDatasBloqueioLiberacao()">Liberar Data</button>
+          </div>
+
+          <!-- Modal -->
+          <div id="modalArea" class="modal">
+            <div class="modal-content">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="JS/salao-de-festa.js"></script>
+
+    <script></script>
+  </body>
+</html>
